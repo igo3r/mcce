@@ -1,0 +1,71 @@
+\documentclass[11pt]{report}
+\input{00_preamble/german.tex}
+\input{00_preamble/thesis-book}
+\input{01_data/yourData}
+
+\hypersetup{
+    pdftitle={\yourThesisTitle},
+    pdfsubject={\typeOfWork},
+    pdfauthor={\yourNameInclTitle},
+    breaklinks,               % permits line breaks for long links
+    bookmarksnumbered,        % ... and include section numbers
+    linktocpage,              % "make page number, not text, be link on TOC ..."
+    colorlinks,               % yes ...
+    linkcolor=black,          % normal internal links;
+    anchorcolor=black,   
+    citecolor=black,
+    urlcolor=blue,            % quite common
+    pdfstartview={Fit},       % "Fit" fits the page to the window
+    pdfpagemode=UseOutlines,  % open bookmarks in Acrobat
+    plainpages=false          % avoids duplicate page number problem
+}
+
+\pagestyle{empty}
+\pagenumbering{gobble}
+
+\begin{document}
+\begin{flushleft}
+    \LARGE{\yourThesisTitle}
+\end{flushleft}
+\subsectionfont{\fontsize{13}{16}\normalfont}
+\titlespacing\subsection{0pt}{0ex}{0ex}
+\subsection*{\yourNameInclTitle}
+\vspace{-0.5em}
+\noindent{\textit{\universityCityCountry}}
+\vspace{1em}
+
+% define header appearance
+\titleformat{\chapter}{\normalfont\large}{\thechapter}{20pt}{\normalfont\large\MakeUppercase}
+\chapterfont{\fontsize{13}{16}\normalfont\MakeUppercase}
+\titlespacing\chapter{0pt}{2ex}{2ex}
+\sectionfont{\fontsize{13}{16}\normalfont}
+\titlespacing\section{0pt}{0ex}{0ex}
+\subsectionfont{\fontsize{13}{16}\normalfont}
+\titlespacing\subsection{0pt}{0ex}{0ex}
+\subsubsectionfont{\fontsize{13}{16}\normalfont}
+\titlespacing\subsection{0pt}{0ex}{0ex}
+% numbering subsubsections
+\setcounter{secnumdepth}{5}
+
+% do not start chapter on new page
+\makeatletter
+\patchcmd{\chapter}{\clearpage}{}{}{}
+\makeatother
+
+\input{thesis_book_chapters/00_abstract_de}
+\input{thesis_book_chapters/01_introduction}
+\input{thesis_book_chapters/02_relatedWork}
+\input{thesis_book_chapters/03_researchQuestion}
+\input{thesis_book_chapters/04_methodologicalApproach}
+\input{thesis_book_chapters/05_documentStructure}
+\input{thesis_book_chapters/06_results}
+\input{thesis_book_chapters/07_conclusionAndFutureWork}
+
+\titleformat{\chapter}{\normalfont\Large}{\thechapter}{20pt}{\normalfont\Large}
+
+\input{acronyms}
+
+\printbibliography[title=\literatureLabel]
+
+\end{document}
+
