@@ -1,5 +1,6 @@
 \documentclass[twoside=off,toc=chapterentrywithdots,a4paper,fontsize=12pt,listof=totoc,bibliography=totoc]{scrbook}
-\input{00_preamble/german}
+\input{00_preamble/german} % choose german or english first
+% \input{00_preamble/english} % make sure only one of them is active
 \input{00_preamble/thesis}
 \input{01_data/yourData}
 
@@ -39,7 +40,8 @@
 \frontmatter{} % turns off chapter numbering and uses roman numerals for page numbers
 \input{thesis_chapters/00_acknowledgements} % adds the acknowledgements
 
-\renewcommand{\figurename}{Abbildung}
+\renewcommand{\figurename}{\figureLabel}
+\renewcommand{\tablename}{\tableLabel}
 
 %\input{A_FrontMatter/kurzfassung} % adds the "Kurzfassung" in german.
 %\input{A_FrontMatter/abstracts} % adds the abstract
@@ -48,7 +50,7 @@
 \input{thesis_chapters/00_abstract_de}
 \input{thesis_chapters/00_abstract_en}
 \microtypesetup{protrusion=false}
-\renewcommand{\contentsname}{Inhalt}
+\renewcommand{\contentsname}{\contentsLabel}
 \tableofcontents{}
 
 \mainmatter{} % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
@@ -65,11 +67,11 @@
 
 % Use an optional list of tables / figures / algorithms / listings(code).
 
-\renewcommand{\listtablename}{Tabellenverzeichnis}
+\renewcommand{\listtablename}{\listOfTablesLabel}
 \listoftables
 \clearpage
 
-\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\renewcommand{\listfigurename}{\listOfFiguresLabel}
 \listoffigures
 \clearpage
 
