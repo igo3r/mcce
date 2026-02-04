@@ -1,5 +1,22 @@
+% Thesis type options
+\newcommand{\masterThesis}{Master Thesis}
+\newcommand{\bachelorThesis}{Bachelor Thesis}
+
+% Study program
+\newcommand{\studyProgramMCCE}{Master's Program Cloud Computing Engineering}
+
+% Labels
 \newcommand{\toObtainLabel}{for obtaining the academic degree}
 \newcommand{\submittedByLabel}{Submitted by:}
-\newcommand{\matNumberLabel}{Matriculation number:}
+\newcommand{\matNumberLabel}{Student ID:}
 \newcommand{\dateLabel}{Date:}
-\newcommand{\advisorLabel}{Supervised by:}
+\newcommand{\advisorLabel}{Advisor:}
+\newcommand{\departmentInformationTechnology}{Department of Information Technology}
+\newcommand{\universityCityCountry}{Hochschule Burgenland, Eisenstadt, Austria}
+\newcommand{\literatureLabel}{Bibliography}
+
+% English date formatting: "July 27th, 2024"
+\newcommand{\monthNameEnglish}[1]{%
+  \ifcase#1\or January\or February\or March\or April\or May\or June%
+  \or July\or August\or September\or October\or November\or December\fi}
+\newcommand{\thesisDate}{\monthNameEnglish{\thesisMonth} \ordinalnum{\thesisDay}, \thesisYear}
