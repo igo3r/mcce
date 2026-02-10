@@ -1,0 +1,155 @@
+%\pagestyle{plain} % no running headers, but page number in footer as required by FHBgld
+%--Packages added by Dominik Thiede
+%\pagestyle{scrheadings}
+\usepackage[table,xcdraw]{xcolor} % Use colours in table
+\usepackage{pifont} %Use Latex Symbols like check mark 
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\omark}{\ding{72}}
+\usepackage{listings} % line break for programm code
+\usepackage{xcolor} % highlighting text
+\usepackage{glossaries}
+% -- Packages needed in the class
+\usepackage{scrhack}
+
+\usepackage[automark]{scrlayer-scrpage}
+
+\clearscrheadfoot            % clear default header/footer
+\ofoot*{\pagemark}           % page number in outer footer (odd=right, even=left)
+\pagestyle{scrheadings}      % use this page style
+
+%\usepackage[a-1b]{pdfx} % Required for PDF-A compliance 
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2cm,bindingoffset=1cm]{geometry} % required for exact FHBgld page margins
+%if changed to \usepackage[ngerman]{babel} "Table of contents" changes to "Inhaltsverzeichnis", "abstract" becomes "Zusammenfassung" and "references" is translated to "Literatur".
+%\usepackage[ngerman, british]{babel}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx} % Required for including pictures
+%\usepackage[pdfa]{hyperref} % Required for PDF-A compliance 
+%\usepackage[hidelinks,pdfpagelayout=TwoPageRight]{hyperref} % FHBgld - Hide links: border and color
+%\renewcommand{\theHsection}{\thepart.section.\thesection}
+\usepackage[T1]{fontenc} % Required for accented characters
+%\usepackage[utf8]{inputenc} % legacy, not needed
+\usepackage{changepage} % detects odd/even pages
+\usepackage[final]{microtype}
+\usepackage{xurl}
+\usepackage{mathpazo} % FHBgld required "Book Antiqua" font is a clone of Palatino
+% \usepackage[natbib=true, backend=biber, style=apa, sorting=nty]{biblatex} % FHBgld APA bibliography style
+%\addbibresource{bibliography.bib} % Bibilography resource file % this goes into the main.tex, otherwise some editors wont find it
+\setcounter{secnumdepth}{4} % FHBgld Numbering depth
+%\setcounter{tocdepth}{3} % FHBgld TOC depth
+\usepackage{csquotes} % Context sensitive quotation facilities, needed for babel and Biblatex-APA to work
+\usepackage{booktabs} % Publication quality tables in LaTeX
+\usepackage{tabularx} % Tabulars with adjustable-width columns.
+\usepackage{multirow} % Create tabular cells spanning multiple rows
+\usepackage{algorithm2e} % Package to show algorithms
+\usepackage{listings} % Package to format code
+\usepackage{xcolor} % Driver-independent color extensions for LaTeX
+%\usepackage[super]{nth} % superscript
+\usepackage{fmtcount} % another superscript ;-)
+\usepackage{verbatim} % provides \begin{verbatim} formatting
+\usepackage{array} % additional functionality for the tabular environment
+\usepackage[printonlyused, nohyperlinks]{acronym}
+
+\usepackage[record=only,acronym,nonumberlist,nopostdot=false,toc=true,style=super]{glossaries-extra} % provides extra glossaries features plus bib2gls, use convertgls2bib  defns.tex defns.bib to convert
+\usepackage[justification=RaggedRight,singlelinecheck=false,font=footnotesize]{caption} % Needed to format captions to align left
+\usepackage{amsmath}
+
+%\RequirePackage{tocloft} % allows to change directories
+
+% \usepackage{showframe}  % Draw a page-layout diagram on pages, RMF
+
+\usepackage{lipsum} % lipsum :-) , RMF 
+
+%  -- colors
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%  -- FHBgld fonts
+% regular fontsize=12pt set in scrbook and mathpazo for Palatino-Roman above
+\setkomafont{disposition}{\bfseries} % bold+fat for all sectioning command titles
+\addtokomafont{title}{\fontsize{24}{24}\selectfont} % FHBgld Title
+\addtokomafont{subtitle}{\fontsize{14}{16}\selectfont} % FHBgld Subtitle
+%\addtokomafont{part}{\fontsize{16}{16}\selectfont} % FHBgld Level 1
+\addtokomafont{chapter}{\fontsize{16}{16}\selectfont} % FHBgld Level 1
+\addtokomafont{section}{\fontsize{14}{16}\selectfont} % FHBgld Level 2
+\addtokomafont{subsection}{\fontsize{14}{16}\selectfont} % FHBgld Level 3
+\addtokomafont{subsubsection}{\fontsize{13}{16}\selectfont} % FHBgld Level 4
+
+% -- Default table fontsize according to FHBgld requirements
+\let\oldtabular\tabular
+\renewcommand{\tabular}{\fontsize{10pt}{14pt}\selectfont\oldtabular}
+% FHBgld wants the first line to have 11pt, unfortunately the array package lets you configure columns only. 
+% Therefore, each cell of the first line of a table is formatted as follows:
+% {\fontsize{11pt}{12pt}\selectfont <content here> }
+
+%  -- FHBgld paragraphs etc.
+\setlength{\parskip}{6pt} % Paragraph distance 6pt as required by FHBgld
+\setlength\parindent{0pt} % No indent as required by FHBgld
+\setlength{\footskip}{2.5\baselineskip} % Move Textbody close to footer as required by FHBgld
+\renewcommand*{\chapterheadstartvskip}{\vspace*{0cm}} % FHBgld starts chapter aligned to top
+
+
+\RedeclareSectionCommand[beforeskip=0pt,afterskip=.5\baselineskip plus .1\baselineskip minus .167\baselineskip]{chapter}
+\RedeclareSectionCommand[beforeskip=-1\baselineskip,afterskip=.2\baselineskip]{section}
+\RedeclareSectionCommand[beforeskip=-.75\baselineskip,afterskip=.5\baselineskip]{subsection}
+\RedeclareSectionCommand[beforeskip=-.75\baselineskip,afterskip=.25\baselineskip]{subsubsection}
+\RedeclareSectionCommand[beforeskip=.5\baselineskip,afterskip=-1em]{paragraph}
+\RedeclareSectionCommand[beforeskip=-.5\baselineskip,afterskip=-1em]{subparagraph}
+
+% %\renewcommand{\rmdefault}{pplj} % Replaces all Roman fonts with pplj (Palatino-Roman) if \usepackage{palatino}, not mathpazo
+
+% %%%%%%%%%%%%%%%%%%%%additional packages and macros%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{algorithm2e}
+%\usepackage[acronym]{glossaries}
+%packages and setings to show colored code
+%\usepackage{listings}
+%\usepackage{xcolor}
+%\definecolor{codegreen}{rgb}{0,0.6,0}
+%\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+%\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+%\usepackage{showframe}
+
+
+%%%%%%%%%%%%%%%%%%% added to thesis draft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{acro}
+\usepackage[
+    urldate=long,		    % default: short, e.g. 08/15/2010
+    style=authoryear-icomp,	% Harvard citation style
+    sorting=nty,            % this is default: sort by name, title, year
+    style=apa,
+    backend=biber,
+    language=german,
+    sortlocale=de-DE,    % set according to your needs
+    natbib=true,		    % if you want to use natbib compatible citation commands; do _not_ use package natbib!
+    uniquename=false,
+    uniquelist=false,
+    maxbibnames=1000,
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{hyperref}

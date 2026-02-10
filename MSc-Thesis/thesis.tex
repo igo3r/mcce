@@ -1,0 +1,46 @@
+\documentclass[twoside,toc=chapterentrywithdots,a4paper,fontsize=12pt,listof=totoc,bibliography=totoc]{scrbook}
+\input{00_A_preamble/german}
+\input{00_A_preamble/thesis}
+\input{00_B_data/yourData}
+\input{00_C_setup/setup}
+
+\begin{document}
+
+\input{00_C_Front_Matter/titlepage} %Creates the titlepage
+
+\frontmatter{} % turns off chapter numbering and uses roman numerals for page numbers
+
+\input{01_chapters/00/00_acknowledgements}
+
+\input{00_D_config/config}
+
+% --- Abstract --- %
+\input{01_chapters/00/00_abstract_de}
+\input{01_chapters/00/00_abstract_en}
+% --- Abstract --- %
+
+\mainmatter{} % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+
+% --- Chapters --- %
+\input{01_chapters/01/01_introduction/_main}
+\input{01_chapters/02/02_relatedWork}
+\input{01_chapters/03/03_fundamentals/_main}
+\input{01_chapters/04/04_implementation/_main}
+\input{01_chapters/05/05_results}
+\input{01_chapters/06/06_discussion}
+\input{01_chapters/07/07_conclusionAndFutureWork}
+
+\input{02_toc/01/bibliography}
+\input{02_toc/02/listoffigures}
+\input{02_toc/03/listoftables}
+\input{02_toc/04/listofequations}
+\clearpage
+\input{02_toc/05/listofacronyms}
+\clearpage
+\input{99_Z_Back_Matter/appendix/_main}
+\clearpage
+\input{99_Z_Back_Matter/tools}
+\clearpage
+\input{99_Z_Back_Matter/declarationOfHonesty}
+
+\end{document}

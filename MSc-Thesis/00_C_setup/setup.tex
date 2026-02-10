@@ -1,0 +1,21 @@
+\hypersetup{
+	pdftitle={\yourThesisTitle},
+	pdfsubject={\typeOfWork},
+	pdfauthor={\yourNameInclTitle},
+	breaklinks,               % permits line breaks for long links
+	bookmarksnumbered,        % ... and include section numbers
+	linktocpage,              % "make page number, not text, be link on TOC ..."
+	colorlinks,               % yes ...
+	linkcolor=black,          % normal internal links;
+	anchorcolor=black,        % don't make scientific papers too much colourful => "black"
+	citecolor=black,
+	urlcolor=blue,            % quite common
+	pdfstartview={Fit},       % "Fit" fits the page to the window
+	pdfpagemode=UseOutlines,  % open bookmarks in Acrobat
+	plainpages=false          % avoids duplicate page number problem
+}
+
+\renewcommand{\glstreenamefmt}[1]{#1}
+\renewcommand{\glstreegroupheaderfmt}[1]{\textbf{#1}}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
